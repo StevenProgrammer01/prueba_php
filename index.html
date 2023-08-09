@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+
+    <div class="box textarea-container" id="arriba">
+        <textarea rows="5" maxlength="250" id="mensaje"></textarea>
+        <button type="button" id="enviar">Enviar</button>
+        <div id="contador">0/250</div>
+    </div>
+
+    <div id="tweet">
+
+    </div>
+
+
+    <script>
+        const mensaje = document.getElementById('mensaje');
+        const contador = document.getElementById('contador');
+        mensaje.addEventListener('input', function (e) {
+            const target = e.target;
+            const longitudMax = target.getAttribute('maxlength');
+            const longitudAct = target.value.length;
+            contador.innerHTML = `${longitudAct}/${longitudMax}`;
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
